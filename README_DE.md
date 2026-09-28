@@ -11,14 +11,16 @@ Programm Daten in eine Textdatei schreibt, die ein Sketch anzeigen soll.
 
 Voraussetzungen: ein aktueller Browser.
 
+Bibliotheken (in `libraries/`): p5.js 1.10.0, p5.sound 1.0.1 (eingebunden,
+nicht verwendet).
+
+## Ausführen
+
 1. Den Ordner in Visual Studio Code öffnen und Live Server starten (in der
    Statusleiste auf **Go Live** klicken).
 2. `assets/list.txt` öffnen, Zeilen ändern, hinzufügen oder löschen und die
    Datei speichern.
 3. Die Zeichenfläche zeigt den neuen Inhalt nach etwa fünf Sekunden.
-
-Bibliotheken (in `libraries/`): p5.js 1.10.0, p5.sound 1.0.1 (eingebunden,
-nicht verwendet).
 
 ## Coding-Hilfe
 
@@ -26,8 +28,9 @@ nicht verwendet).
   `loadStrings()` in das Array `list`. Sobald die Datei da ist, plant es
   sich mit `setTimeout(..., 5000)` erneut ein. Die 5000 ms ändern, um
   schneller oder langsamer abzufragen. Wird einmal in `preload()` gestartet.
-- **`setup()`**: erstellt eine Zeichenfläche von 400 × 400 Pixeln und setzt
-  die Textgrösse auf 12.
-- **`draw()`**: zeichnet die Zeilen untereinander, beginnend bei y = 20 mit
-  10 px Zeilenabstand. Bei grösserer Schrift den Schritt (`y += 10`)
-  erhöhen.
+- **`setup()`**: erstellt eine Zeichenfläche von 400 × 400 Pixeln, setzt
+  die Textgrösse auf 12 und den Zeilenabstand (`textLeading`) auf 18
+  (1,5 × Textgrösse).
+- **`draw()`**: zeichnet die Zeilen untereinander, beginnend bei y = 20,
+  und rückt pro Zeile um `textLeading()` nach unten. Bei anderer
+  Schriftgrösse `textLeading` mit anpassen.

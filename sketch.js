@@ -33,6 +33,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400); // create canvas
   textSize(12);           // set default text size
+  textLeading(18);        // line spacing: 1.5 × text size
 }
 
 // ===============================
@@ -47,6 +48,6 @@ function draw() {
   // Iterate through all lines in the list and display them
   list.forEach((zeile) => {
     text(zeile, 20, y); // draw text at x=20, y=current line
-    y += 10;            // move down for the next line
+    y += textLeading(); // move down by one line for the next line
   });
 }
